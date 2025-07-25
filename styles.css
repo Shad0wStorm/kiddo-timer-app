@@ -77,8 +77,7 @@ button {
 /* Show only the unicorn when unicorn theme is active */
 body.theme-unicorn .unicorn {
   display: block;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 10%;
 }
 
 /* Show only Anna and Elsa when frozen theme is active */
@@ -94,15 +93,13 @@ body.theme-frozen .elsa {
 /* Minnie Mouse */
 body.theme-minnie .minnie {
   display: block;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 10%;
 }
 
 /* Inside Out */
 body.theme-insideout .joy {
   display: block;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 10%;
 }
 
 
