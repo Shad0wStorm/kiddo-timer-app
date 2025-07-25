@@ -53,55 +53,56 @@ button {
 
 /* Character Container */
 .character-wrapper {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 1rem;
-  z-index: 0;
+  height: 100vh;
   pointer-events: none;
+  z-index: 0;
 }
 
 /* Hide all characters by default */
 .character {
-  display: none;
   position: absolute;
   bottom: 0;
-  max-height: 60vh; /* Or whatever looks good */
+  max-width: 30%;
+  height: auto;
+  display: none;
+  z-index: 2;
 }
 
-/* Show only the unicorn when unicorn theme is active */
+/* UNICORN */
 body.theme-unicorn .unicorn {
   display: block;
-  right: 10%;
+  right: 5%;
+  bottom: 0;
 }
 
-/* Show only Anna and Elsa when frozen theme is active */
+/* FROZEN */
 body.theme-frozen .anna {
   display: block;
-  left: 10%;
-}
-body.theme-frozen .elsa {
-  display: block;
-  right: 10%;
+  left: 5%;
+  bottom: 0;
 }
 
-/* Minnie Mouse */
+body.theme-frozen .elsa {
+  display: block;
+  right: 5%;
+  bottom: 0;
+}
+
+/* MINNIE */
 body.theme-minnie .minnie {
   display: block;
   right: 10%;
+  bottom: 0;
 }
 
-/* Inside Out */
+/* INSIDE OUT */
 body.theme-insideout .joy {
   display: block;
   left: 10%;
+  bottom: 0;
 }
-
 
 /* Theme: Unicorn */
 body.theme-unicorn {
@@ -174,7 +175,7 @@ body:not(.theme-unicorn):not(.theme-frozen):not(.theme-minnie):not(.theme-inside
 /* Responsive Tweaks */
 @media (max-width: 768px) {
   .character {
-    max-height: 40vh;
+    max-width: 40%;
   }
 }
 
