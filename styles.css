@@ -30,7 +30,7 @@ button { border: none; border-radius: 10px; cursor: pointer; }
 /* UNICORN */
 body.theme-unicorn {
   background-image: 
-    /*url('./assets/fg-unicorn.png'),*/
+    url('./assets/fg-unicorn.png'),
     url('./assets/bg-unicorn.jpg');
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
@@ -64,10 +64,10 @@ body.theme-unicorn button { background-color: #ffd1dc; color: #880e4f; box-shado
 body.theme-frozen {
   --bg: linear-gradient(to bottom, #d0f0ff, #a0d8ef);
   --fg: #003f91;
-  background-image: url('./assets/bg-frozen.jpg'), var(--bg); 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url('./assets/fg-elsa.png') url('./assets/fg-anna.png') url('./assets/bg-frozen.jpg'), var(--bg); 
+  background-repeat: no-repeat no-repeat no-repeat;
+  background-position: center right, center left, center center;
+  background-size: auto auto cover;
 }
 body.theme-frozen button { background-color: #e0f7fa; color: #006064; box-shadow: 0 0 10px #b3e5fc; }
 
