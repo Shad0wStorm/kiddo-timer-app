@@ -11,62 +11,77 @@ body {
   transition: background 0.3s, color 0.3s;
   background-size: cover;
   background-position: center;
+  overflow-x: hidden;
 }
 
-#app { z-index: 0; position: relative; text-align: center; }
-#timer-display { font-size: 5rem; margin: 1rem 0; font-weight: bold; }
-form input, button, select {
+#app { 
+  z-index: 1; 
+  position: relative; 
+  text-align: center; 
+}
+
+#timer-display { 
+  font-size: 5rem; 
+  margin: 1rem 0; 
+  font-weight: bold; 
+}
+
+form input, 
+button, 
+select {
   padding: 0.5rem;
   font-size: 1.2rem;
   margin: 0.2rem;
 }
-button { border: none; border-radius: 10px; cursor: pointer; }
-#confetti-canvas {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%; pointer-events: none;
-  z-index: 999; display: none;
+
+button { 
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
 }
 
+#confetti-canvas {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  pointer-events: none;
+  z-index: 999; 
+  display: none;
+}
+ 
+/* Character Container */
 .character-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1rem;
+  z-index: 0;
   pointer-events: none;
 }
 
 .character {
-  position: absolute;
-  bottom: 0;
   max-height: 60vh;
   object-fit: contain;
 }
 
+/* Individual Character Tweaks */
 .character.unicorn {
-  right: 1rem;
-  bottom: 0;
   max-height: 50vh;
-  position: absolute;
-  padding: 1rem;
 }
 
-.character.anna {
-  left: 0;
-  padding-left: 1rem;
-}
-
-.character.elsa {
-  right: 0;
-  padding-right: 1rem;
-}
-
-.character.minnie {
-  right: 0;
-  padding-right: 1rem;
-}
-
+.character.anna,
+.character.elsa,
+.character.minnie,
 .character.joy {
-  left: 0;
-  padding-left: 1rem;
+  max-height: 50vh;
+  padding: 0 1rem;
 }
 
 /* UNICORN */
@@ -79,19 +94,6 @@ body.theme-unicorn {
   z-index: 0;
   --fg: #d63384;
 }
-
-/*body.theme-unicorn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(135deg, #ffe0f0, #fddcff, #e0f7ff);
-  background-size: 300% 300%;
-  animation: sparkle 20s ease infinite;
-  pointer-events: none;
-  opacity: 0.7;
-  mix-blend-mode: screen;
-}*/
 
 body.theme-unicorn button { background-color: #ffd1dc; color: #880e4f; box-shadow: 0 0 10px #ffc0cb; }
 
@@ -137,8 +139,7 @@ body.theme-minnie {
 
   background-color: var(--bg-color);
   background-image:
-    radial-gradient(circle, #ffffff 15%, transparent 16%), /* white polka dots */
-    url('./assets/bg-minnie-bow.jpg');                     /* subtle bow pattern if you have it */
+    radial-gradient(circle, #ffffff 15%, transparent 16%); /* white polka dots */
   background-size: 50px 50px, cover;
   background-position: center;
   background-repeat: repeat, no-repeat;
