@@ -56,7 +56,7 @@ body.theme-unicorn {
 body.theme-unicorn button { background-color: #ffd1dc; color: #880e4f; box-shadow: 0 0 10px #ffc0cb; }
 
 @keyframes sparkle {
-  0%,100% { background-position: 0% 50%; }
+  0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
 
@@ -64,11 +64,29 @@ body.theme-unicorn button { background-color: #ffd1dc; color: #880e4f; box-shado
 body.theme-frozen {
   --bg: linear-gradient(to bottom, #d0f0ff, #a0d8ef);
   --fg: #003f91;
-  background-image:   url('./assets/fg-elsa.png'), url('./assets/fg-anna.png'), url('./assets/bg-frozen.jpg'),  var(--bg); 
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center right, center left, center center, center center;
+
+  background-image: 
+    url('./assets/fg-elsa.png'), 
+    url('./assets/fg-anna.png'), 
+    url('./assets/bg-frozen.jpg'),  
+    var(--bg); 
+
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: right bottom, left bottom, center, center;
   background-size: contain, contain, cover, cover;
 }
+
+@media (max-width: 768px) {
+  body.theme-frozen {
+    background-size: 35%, 35%, cover, cover;
+  }
+}
+@media (max-width: 480px) {
+  body.theme-frozen {
+    background-size: 40%, 0%, cover, cover;
+  }
+}
+
 body.theme-frozen button { background-color: #e0f7fa; color: #006064; box-shadow: 0 0 10px #b3e5fc; }
 
 /* MINNIE MOUSE */
