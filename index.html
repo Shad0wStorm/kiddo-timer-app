@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="theme-unicorn">
+    <div id="app">
+        <h1>⏳ Countdown Timer</h1>
+
+        <div id="timer-display">00:00</div>
+
+        <form id="timer-form">
+            <input type="number" id="minutes" placeholder="Minutes" min="0" max="60" required />
+            <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" required />
+            <button type="submit">Start</button>
+            <button type="button" id="pause-btn">Pause</button>
+            <button type="button" id="reset-btn">Reset</button>
+        </form>
+
+        <select id="theme-select">
+            <option value="unicorn">Unicorn 🦄</option>
+            <option value="frozen">Frozen ❄️</option>
+            <option value="minnie">Minnie Mouse 🎀</option>
+            <option value="insideout">Inside Out 🌈</option>
+        </select>
+
+        <canvas id="confetti-canvas"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="module" src="./main.js"></script>
+    
+</body>
+</html>
