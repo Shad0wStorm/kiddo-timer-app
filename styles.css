@@ -32,9 +32,10 @@ body.theme-unicorn {
   background-image: 
     url('./assets/fg-unicorn.png'),
     url('./assets/bg-unicorn.jpg');
-  background-size: auto, cover;
+  background-size: contain, cover;
   background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
+  background-position: 
+  right, center ;
   position: relative;
   z-index: 0;
   --fg: #d63384;
