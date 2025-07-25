@@ -14,43 +14,43 @@ body {
   overflow-x: hidden;
 }
 
-#app { 
-  z-index: 1; 
-  position: relative; 
-  text-align: center; 
+#app {
+  z-index: 1;
+  position: relative;
+  text-align: center;
 }
 
-#timer-display { 
-  font-size: 5rem; 
-  margin: 1rem 0; 
-  font-weight: bold; 
+#timer-display {
+  font-size: 5rem;
+  margin: 1rem 0;
+  font-weight: bold;
 }
 
-form input, 
-button, 
+form input,
+button,
 select {
   padding: 0.5rem;
   font-size: 1.2rem;
   margin: 0.2rem;
 }
 
-button { 
-  border: none; 
-  border-radius: 10px; 
-  cursor: pointer; 
+button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #confetti-canvas {
-  position: fixed; 
-  top: 0; 
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  z-index: 999; 
+  z-index: 999;
   display: none;
 }
- 
+
 /* Character Container */
 .character-wrapper {
   position: fixed;
@@ -84,67 +84,49 @@ button {
   padding: 0 1rem;
 }
 
-/* UNICORN */
+/* Theme: Unicorn */
 body.theme-unicorn {
   background-image: url('./assets/bg-unicorn.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
-  z-index: 0;
   --fg: #d63384;
 }
 
-body.theme-unicorn button { background-color: #ffd1dc; color: #880e4f; box-shadow: 0 0 10px #ffc0cb; }
-
-@keyframes sparkle {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+body.theme-unicorn button {
+  background-color: #ffd1dc;
+  color: #880e4f;
+  box-shadow: 0 0 10px #ffc0cb;
 }
 
-/* FROZEN */
+/* Theme: Frozen */
 body.theme-frozen {
   --bg: linear-gradient(to bottom, #d0f0ff, #a0d8ef);
   --fg: #003f91;
-
-  background-image: 
-    url('./assets/bg-frozen.jpg'),  
-    var(--bg); 
-
+  background-image: url('./assets/bg-frozen.jpg'), var(--bg);
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
-  position: relative;
-  overflow-x: hidden;
 }
 
-@media (max-width: 768px) {
-  .character.anna,
-  .character.elsa {
-    max-height: 40vh;
-  }
-}
-@media (max-width: 480px) {
-  .character.anna{
-    display: none;
-  }
+body.theme-frozen button {
+  background-color: #e0f7fa;
+  color: #006064;
+  box-shadow: 0 0 10px #b3e5fc;
 }
 
-body.theme-frozen button { background-color: #e0f7fa; color: #006064; box-shadow: 0 0 10px #b3e5fc; }
-
-/* MINNIE MOUSE */
+/* Theme: Minnie Mouse */
 body.theme-minnie {
   --bg-color: #fff0f5;
   --fg: #c2185b;
-
   background-color: var(--bg-color);
-  background-image:
-    radial-gradient(circle, #ffffff 15%, transparent 16%); /* white polka dots */
+  background-image: radial-gradient(circle, #ffffff 15%, transparent 16%);
   background-size: 50px 50px, cover;
   background-position: center;
   background-repeat: repeat, no-repeat;
   color: var(--fg);
 }
+
 body.theme-minnie button {
   background-color: #ffc1e3;
   color: #880e4f;
@@ -153,13 +135,32 @@ body.theme-minnie button {
   font-weight: bold;
 }
 
-/* INSIDE OUT */
+/* Theme: Inside Out */
 body.theme-insideout {
   --bg: linear-gradient(135deg, #f94144 0%, #f3722c 25%, #f9c74f 50%, #90be6d 75%, #577590 100%);
   --fg: #333;
 }
-body.theme-insideout button { background-color: #ffd166; color: #073b4c; box-shadow: 0 0 10px #ef476f; }
 
+body.theme-insideout button {
+  background-color: #ffd166;
+  color: #073b4c;
+  box-shadow: 0 0 10px #ef476f;
+}
+
+/* Fallback Theme */
 body:not(.theme-unicorn):not(.theme-frozen):not(.theme-minnie):not(.theme-insideout) {
   background: linear-gradient(to right, #ddd, #bbb);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .character {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .character.anna {
+    display: none;
+  }
 }
