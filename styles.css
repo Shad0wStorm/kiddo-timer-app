@@ -30,9 +30,9 @@ button { border: none; border-radius: 10px; cursor: pointer; }
 /* UNICORN */
 body.theme-unicorn {
   background-image: 
-    url('./assets/bg-unicorn.jpg'),
-    url('./assets/fg-unicorn.png');
-  background-size: cover, contain;
+    url('./assets/fg-unicorn.png'),
+    url('./assets/bg-unicorn.jpg');
+  background-size: contain, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: center center, right bottom ;
   position: relative;
