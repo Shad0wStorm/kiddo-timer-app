@@ -34,7 +34,7 @@ body.theme-unicorn {
     url('./assets/bg-unicorn.jpg');
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
-  background-position: center center;
+  background-position: center, center;
   position: relative;
   z-index: 0;
   --fg: #d63384;
@@ -65,9 +65,9 @@ body.theme-frozen {
   --bg: linear-gradient(to bottom, #d0f0ff, #a0d8ef);
   --fg: #003f91;
   background-image: url('./assets/fg-elsa.png') url('./assets/fg-anna.png') url('./assets/bg-frozen.jpg'), var(--bg); 
-  background-repeat: no-repeat no-repeat no-repeat;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center right, center left, center center;
-  background-size: auto auto cover;
+  background-size: auto, auto, cover;
 }
 body.theme-frozen button { background-color: #e0f7fa; color: #006064; box-shadow: 0 0 10px #b3e5fc; }
 
