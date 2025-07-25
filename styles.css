@@ -64,7 +64,6 @@ button {
 .character {
   position: absolute;
   bottom: 0;
-  max-height: 60vh;
   z-index: 0;
   display: none;
 }
@@ -74,6 +73,7 @@ body.theme-unicorn .unicorn {
   display: block;
   right: -120%;
   bottom: -250px;
+  max-height: 60vh;
 }
 
 /* FROZEN */
@@ -81,12 +81,14 @@ body.theme-frozen .anna {
   display: block;
   left: -50%;
   bottom: 0;
+  max-height: 50vh;
 }
 
 body.theme-frozen .elsa {
   display: block;
   right: -50%;
   bottom: 0;
+  max-height: 50vh;
 }
 
 /* MINNIE */
@@ -94,6 +96,7 @@ body.theme-minnie .minnie {
   display: block;
   right: -50%;
   bottom: 0;
+  max-height: 50vh;
 }
 
 /* INSIDE OUT */
@@ -101,6 +104,7 @@ body.theme-insideout .joy {
   display: block;
   left: -50%;
   bottom: 0;
+  max-height: 50vh;
 }
 
 /* Theme: Unicorn */
