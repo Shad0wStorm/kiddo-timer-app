@@ -67,7 +67,7 @@ body.theme-frozen {
   background-image:   url('./assets/bg-frozen.jpg'), url('./assets/fg-elsa.png'), url('./assets/fg-anna.png'), var(--bg); 
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center center, center right, center left;
-  background-size: cover, auto, auto;
+  background-size: contain, contain, cover, cover;
 }
 body.theme-frozen button { background-color: #e0f7fa; color: #006064; box-shadow: 0 0 10px #b3e5fc; }
 
