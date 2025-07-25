@@ -27,14 +27,54 @@ button { border: none; border-radius: 10px; cursor: pointer; }
   z-index: 999; display: none;
 }
 
+.character-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.character {
+  position: absolute;
+  bottom: 0;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.character.unicorn {
+  right: 1rem;
+  bottom: 0;
+  max-height: 50vh;
+  position: absolute;
+  padding: 1rem;
+}
+
+.character.anna {
+  left: 0;
+  padding-left: 1rem;
+}
+
+.character.elsa {
+  right: 0;
+  padding-right: 1rem;
+}
+
+.character.minnie {
+  right: 0;
+  padding-right: 1rem;
+}
+
+.character.joy {
+  left: 0;
+  padding-left: 1rem;
+}
+
 /* UNICORN */
 body.theme-unicorn {
-  background-image: 
-    url('./assets/fg-unicorn.png'),
-    url('./assets/bg-unicorn.jpg');
-  background-size: contain, cover;
-  background-repeat: no-repeat, no-repeat;
-  background-position: right bottom, center center;
+  background-image: url('./assets/bg-unicorn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   z-index: 0;
   --fg: #d63384;
@@ -66,24 +106,25 @@ body.theme-frozen {
   --fg: #003f91;
 
   background-image: 
-    url('./assets/fg-elsa.png'), 
-    url('./assets/fg-anna.png'), 
     url('./assets/bg-frozen.jpg'),  
     var(--bg); 
 
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position: right bottom, left bottom, center, center;
-  background-size: contain, contain, cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
+  position: relative;
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
-  body.theme-frozen {
-    background-size: 35%, 35%, cover, cover;
+  .character.anna,
+  .character.elsa {
+    max-height: 40vh;
   }
 }
 @media (max-width: 480px) {
-  body.theme-frozen {
-    background-size: 40%, 0%, cover, cover;
+  .character.anna{
+    display: none;
   }
 }
 
