@@ -66,23 +66,45 @@ button {
   pointer-events: none;
 }
 
+/* Hide all characters by default */
 .character {
-  max-height: 60vh;
-  object-fit: contain;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  max-height: 60vh; /* Or whatever looks good */
 }
 
-/* Individual Character Tweaks */
-.character.unicorn {
-  max-height: 50vh;
+/* Show only the unicorn when unicorn theme is active */
+body.theme-unicorn .unicorn {
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.character.anna,
-.character.elsa,
-.character.minnie,
-.character.joy {
-  max-height: 50vh;
-  padding: 0 1rem;
+/* Show only Anna and Elsa when frozen theme is active */
+body.theme-frozen .anna {
+  display: block;
+  left: 10%;
 }
+body.theme-frozen .elsa {
+  display: block;
+  right: 10%;
+}
+
+/* Minnie Mouse */
+body.theme-minnie .minnie {
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Inside Out */
+body.theme-insideout .joy {
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 /* Theme: Unicorn */
 body.theme-unicorn {
