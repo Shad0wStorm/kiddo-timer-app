@@ -29,28 +29,28 @@ button { border: none; border-radius: 10px; cursor: pointer; }
 
 /* UNICORN */
 body.theme-unicorn {
-  background-color: #ffe0f0; 
-  --fg: #d63384;
   background-image: 
-    url('./assets/bg-unicorn.jpg'),
-    linear-gradient(135deg, #ffe0f0, #fddcff, #e0f7ff);
+    /*url('./assets/fg-unicorn.png'),*/
+    url('./assets/bg-unicorn.jpg');
+  background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
-  background-position: center;
-  background-size: cover, 300% 300%;
+  background-position: center center;
   position: relative;
   z-index: 0;
+  --fg: #d63384;
 }
 
 body.theme-unicorn::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(135deg, #ffe0f0, #fddcff, #e0f7ff);
   background-size: 300% 300%;
-  z-index: -1;
   animation: sparkle 20s ease infinite;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 1;
+  mix-blend-mode: screen;
 }
 
 body.theme-unicorn button { background-color: #ffd1dc; color: #880e4f; box-shadow: 0 0 10px #ffc0cb; }
