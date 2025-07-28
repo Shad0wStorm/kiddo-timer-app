@@ -1,6 +1,6 @@
 /* Base Styles */
 html, body {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS', roboto;
   margin: 0;
   height: 100%;
   background: var(--bg);
