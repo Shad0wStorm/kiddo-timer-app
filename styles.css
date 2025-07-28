@@ -94,10 +94,9 @@ button {
 
 /* Characters */
 .character {
-  height: 50vh;
+  height: auto;
   width: auto;
   max-width: 100%;
-
 }
 
 /* Hide all by default */
