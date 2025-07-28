@@ -11,19 +11,17 @@ body {
   overflow-x: hidden;
 }
 
-/* 3-column loayout */
+/* === Layout Container === */
 #layout-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: row;
   height: 100%;
-  padding: 1rem;
   box-sizing: border-box;
 }
 
-/* Side Columns */
+/* === Side Columns === */
 .side-column {
-  width: 20%;
+  flex: 0 0 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,26 +35,27 @@ body {
 }
 
 .right {
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
-/* Center content */
+/* === Center App === */
 #app {
-  width: 60%;
+  flex: 1 1 60%;
   text-align: center;
   z-index: 1;
   position: relative;
+  padding: 1rem;
   padding-bottom: 10vh;
 }
 
-/* Timer display */
+/* === Timer Display === */
 #timer-display {
   font-size: 5rem;
   margin: 1rem 0;
   font-weight: bold;
 }
 
-/* Form and Controls */
+/* Form + Controls */
 form input,
 button,
 select {
@@ -94,15 +93,14 @@ button {
 
 /* Characters */
 .character {
+  display: none;
   height: auto;
   width: auto;
+  max-height: 50vh;
   max-width: 100%;
 }
 
-/* Hide all by default */
-.character {
-  display: none;
-}
+
 
 /* Theme-specific Characters */
 body.theme-unicorn .unicorn {
@@ -111,14 +109,8 @@ body.theme-unicorn .unicorn {
 }
 
 body.theme-frozen .anna,
-body.theme-frozen .elsa {
-  display: block;
-}
-
-body.theme-minnie .minnie {
-  display: block;
-}
-
+body.theme-frozen .elsa,
+body.theme-minnie .minnie,
 body.theme-insideout .joy {
   display: block;
 }
@@ -191,38 +183,51 @@ body:not(.theme-unicorn):not(.theme-frozen):not(.theme-minnie):not(.theme-inside
   background: linear-gradient(to right, #ddd, #bbb);
 }
 
-/* Responsive Tweaks */
+/* === Responsive Tweaks === */
+/* === Tablet Scale === */
 @media (max-width: 1024px) {
   #layout-container {
     flex-direction: row;
-    align-items: flex-end;
   }
 
   .side-column {
-
-    max-width: 45%;
+    flex: 0 0 15%;
+    justify-content: flex-end;
   }
 
-  .left.character.empty,
-  .right.character.empty {
-    flex: 0 1 5%;
+  .left,
+  .right {
+    align-items: center;
   }
 
   #app {
     flex: 1 1 70%;
-    width: auto;
     padding-bottom: 5vh;
   }
 
   .character {
     height: 50vh;
-    max-width: auto;
   }
 }
 
+/* === Mobile Scale === */
 @media (max-width: 480px) {
-  .character {
+  #layout-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-column {
     display: none;
+  }
+
+  #app {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  body .character {
+    display: none !important;
   }
 
   .big-button {
