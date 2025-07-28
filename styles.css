@@ -41,6 +41,15 @@ button {
   cursor: pointer;
 }
 
+.big-button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem auto;
+  display: block;
+}
+
 #confetti-canvas {
   position: fixed;
   top: 0;
