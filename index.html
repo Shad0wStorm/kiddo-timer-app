@@ -21,26 +21,28 @@
         </div>
 
         <!-- Main center content -->
-        <div id="app">
-            <h1>Ivy's Countdown Timer</h1>
+        <main id="app-wrapper">
+            <div id="app">
+                <h1>Ivy's Countdown Timer</h1>
 
-            <div id="timer-display">00:00</div>
+                <div id="timer-display">00:00</div>
 
-            <form id="timer-form">
-                <input type="number" id="minutes" placeholder="Minutes" min="0" max="60" required />
-                <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" required />
-                <button id="start-stop-btn" class="big-button">Start</button>
-            </form>
+                <form id="timer-form">
+                    <input type="number" id="minutes" placeholder="Minutes" min="0" max="60" required />
+                    <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" required />
+                    <button id="start-stop-btn" class="big-button">Start</button>
+                </form>
 
-            <select id="theme-select">
-                <option value="unicorn">Unicorn 🦄</option>
-                <option value="frozen">Frozen ❄️</option>
-                <option value="minnie">Minnie Mouse 🎀</option>
-                <option value="insideout">Inside Out 🌈</option>
-            </select>
+                <select id="theme-select">
+                    <option value="unicorn">Unicorn 🦄</option>
+                    <option value="frozen">Frozen ❄️</option>
+                    <option value="minnie">Minnie Mouse 🎀</option>
+                    <option value="insideout">Inside Out 🌈</option>
+                </select>
 
-            <canvas id="confetti-canvas"></canvas>
-        </div>
+                <canvas id="confetti-canvas"></canvas>
+            </div>
+        </main>
 
         <!-- Right column characters -->
         <div class="side-column right">
