@@ -199,7 +199,7 @@ body:not(.theme-unicorn):not(.theme-frozen):not(.theme-minnie):not(.theme-inside
   }
 
   .side-column {
-    flex: 0 1 15%;
+
     max-width: 45%;
   }
 
