@@ -14,7 +14,7 @@ body {
 /* === Layout Container === */
 #layout-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
   box-sizing: border-box;
 }
@@ -225,7 +225,7 @@ body:not(.theme-unicorn):not(.theme-frozen):not(.theme-minnie):not(.theme-inside
     width: 100%;
     padding: 1rem;
   }
-  
+
   body .character {
     display: none !important;
   }
