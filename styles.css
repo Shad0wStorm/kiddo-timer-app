@@ -1,11 +1,8 @@
 /* Base Styles */
 body {
   font-family: 'Comic Sans MS', cursive;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   margin: 0;
+  height: 100vh;
   background: var(--bg);
   color: var(--fg);
   transition: background 0.3s, color 0.3s;
@@ -14,19 +11,52 @@ body {
   overflow-x: hidden;
 }
 
-#app {
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  padding-bottom: 25vh;
+/* 3-column loayout */
+#layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
+/* Side Columns */
+.side-column {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.left {
+  align-items: flex-end;
+}
+
+.right {
+  align-items: flex-end;
+}
+
+/* Center content */
+#app {
+  width: 60%;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  padding-bottom: 10vh;
+}
+
+/* Timer display */
 #timer-display {
   font-size: 5rem;
   margin: 1rem 0;
   font-weight: bold;
 }
 
+/* Form and Controls */
 form input,
 button,
 select {
@@ -50,6 +80,7 @@ button {
   display: block;
 }
 
+/* Confetti Canvas */
 #confetti-canvas {
   position: fixed;
   top: 0;
@@ -61,59 +92,35 @@ button {
   display: none;
 }
 
-/* Character Container */
-.character-wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  pointer-events: none;
+/* Characters */
+.character {
+  max-height: 50vh;
+  width: auto;
+  height: auto;
 }
 
-/* Hide all characters by default */
+/* Hide all by default */
 .character {
-  position: absolute;
-  bottom: 0;
-  z-index: 0;
   display: none;
 }
 
-/* UNICORN */
+/* Theme-specific Characters */
 body.theme-unicorn .unicorn {
   display: block;
-  right: -120%;
-  bottom: -250px;
   max-height: 60vh;
 }
 
-/* FROZEN */
-body.theme-frozen .anna {
-  display: block;
-  left: -50%;
-  bottom: 0;
-  max-height: 50vh;
-}
-
+body.theme-frozen .anna,
 body.theme-frozen .elsa {
   display: block;
-  right: -50%;
-  bottom: 0;
-  max-height: 50vh;
 }
 
-/* MINNIE */
 body.theme-minnie .minnie {
   display: block;
-  right: -50%;
-  bottom: 0;
-  max-height: 50vh;
 }
 
-/* INSIDE OUT */
 body.theme-insideout .joy {
   display: block;
-  left: -50%;
-  bottom: 0;
-  max-height: 50vh;
 }
 
 /* Theme: Unicorn */
@@ -143,11 +150,11 @@ body.theme-frozen {
 
 body.theme-frozen button {
   background-color: #e0f7fa;
-  color: #006064;
+  color:#006064;
   box-shadow: 0 0 10px #b3e5fc;
 }
 
-/* Theme: Minnie Mouse */
+/* Theme: Minnie */
 body.theme-minnie {
   --bg-color: #fff0f5;
   --fg: #c2185b;
@@ -163,7 +170,7 @@ body.theme-minnie button {
   background-color: #ffc1e3;
   color: #880e4f;
   box-shadow: 0 0 15px #f8bbd0, inset 0 0 5px #fff;
-  border-radius: 999px;
+  border-radius: 10px;
   font-weight: bold;
 }
 
@@ -185,14 +192,35 @@ body:not(.theme-unicorn):not(.theme-frozen):not(.theme-minnie):not(.theme-inside
 }
 
 /* Responsive Tweaks */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  #layout-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-column {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #app {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
+
   .character {
-    max-width: 40%;
+    max-height: 30vh;
   }
 }
 
 @media (max-width: 480px) {
   .character.anna {
     display: none;
+  }
+
+  .big-button {
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
   }
 }

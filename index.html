@@ -12,33 +12,42 @@
 
 
 <body class="theme-unicorn">
-    <div id="app">
-        <h1>⏳ Countdown Timer</h1>
+    <div id="layout-container">
 
-        <div id="timer-display">00:00</div>
-
-        <form id="timer-form">
-            <input type="number" id="minutes" placeholder="Minutes" min="0" max="60" required />
-            <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" required />
-            <button id="start-stop-btn" class="big-button">Start</button>
-        </form>
-
-        <select id="theme-select">
-            <option value="unicorn">Unicorn 🦄</option>
-            <option value="frozen">Frozen ❄️</option>
-            <option value="minnie">Minnie Mouse 🎀</option>
-            <option value="insideout">Inside Out 🌈</option>
-        </select>
-
-        <div class="character-wrapper">
-            <img src="./assets/fg-unicorn.png" alt="Unicorn" class="character unicorn">
-            <img src="./assets/fg-anna.png" alt="Anna" class="character anna">
-            <img src="./assets/fg-elsa.png" alt="Elsa" class="character elsa">
-            <img src="./assets/fg-minnie.png" alt="Minnie" class="character minnie">
+        <!-- Left column characters -->
+        <div class="side-column left">
             <img src="./assets/fg-joy.png" alt="Joy" class="character joy">
+            <img src="./assets/fg-anna.png" alt="Anna" class="character anna">
         </div>
 
-        <canvas id="confetti-canvas"></canvas>
+        <!-- Main center content -->
+        <div id="app">
+            <h1>Ivy's Countdown Timer</h1>
+
+            <div id="timer-display">00:00</div>
+
+            <form id="timer-form">
+                <input type="number" id="minutes" placeholder="Minutes" min="0" max="60" required />
+                <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" required />
+                <button id="start-stop-btn" class="big-button">Start</button>
+            </form>
+
+            <select id="theme-select">
+                <option value="unicorn">Unicorn 🦄</option>
+                <option value="frozen">Frozen ❄️</option>
+                <option value="minnie">Minnie Mouse 🎀</option>
+                <option value="insideout">Inside Out 🌈</option>
+            </select>
+
+            <canvas id="confetti-canvas"></canvas>
+        </div>
+
+        <!-- Right column characters -->
+        <div class="side-column right">
+            <img src="./assets/fg-unicorn.png" alt="Unicorn" class="character unicorn">
+            <img src="./assets/fg-elsa.png" alt="Elsa" class="character elsa">
+            <img src="./assets/fg-minnie.png" alt="Minnie" class="character minnie">
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
